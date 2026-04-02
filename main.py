@@ -99,9 +99,10 @@ if __name__ == "__main__":
             formatter_class=ColorHelpFormatter,
             epilog="""
 examples:
-  MarkdownToHTML.exe page.md output/
-  MarkdownToHTML.exe Documents/ output/ -s -v
-  MarkdownToHTML.exe page.md output/ -s --gsc
+  MarkdownToHTML.exe page.md
+  MarkdownToHTML.exe page.md -o output/
+  MarkdownToHTML.exe Documents/ -o output/ -s -v
+  MarkdownToHTML.exe page.md -o output/ -s --gsc
                     """
         )
         parser.add_argument("markdown_path", help="Path to the markdown file.")
