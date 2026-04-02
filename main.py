@@ -2,7 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from console_colors import YELLOW, RESET, GREEN, ColorHelpFormatter
+from console_colors import YELLOW, RESET, GREEN, ColorHelpFormatter, color_from_hex, WHITE
 from css import build_css
 from md_parser import parse
 
@@ -12,7 +12,7 @@ def builder(markdown_path, output_path, css=False, verbose=False, gsc=False):
     with open(markdown_path, "r") as markdown_file:
         file_name = Path(markdown_path).stem
         if verbose:
-            print(f"[build] {YELLOW}Building base HTML{RESET}")
+            print(f"[build] {color_from_hex('ff9bad')}Building base HTML~{RESET}")
         html = [
             "<!DOCTYPE html>",
             "<html>",
@@ -34,17 +34,17 @@ def builder(markdown_path, output_path, css=False, verbose=False, gsc=False):
         ]
 
         if verbose:
-            print(f"[build] {YELLOW}Reading file: {file_name}{RESET}")
+            print(f"[build] {color_from_hex('5bcefa')}Reading file: {file_name}{RESET}")
         content = markdown_file.read()
         html += parse(content, css, gsc)
 
         if verbose:
-            print(f"[build] {YELLOW}Closing HTML tags{RESET}")
+            print(f"[build] {color_from_hex('5bcefa')}Closing HTML tags~{RESET}")
         if css:
             css_path = Path(f"{output_path}/style.css")
             if not css_path.exists():
                 if verbose:
-                    print(f"[build] {YELLOW}CSS file not found! Rebuilding...{RESET}")
+                    print(f"[build] {WHITE}CSS file not found! Rebuilding...{RESET}")
                 build_css(css_path, verbose)
             html += [
                 '<script src="gsc.js"></script>',
@@ -84,11 +84,11 @@ def builder(markdown_path, output_path, css=False, verbose=False, gsc=False):
 
         output_path = Path(f"{output_path}/{file_name}.html")
         if verbose:
-            print(f"[build] {YELLOW}Writing file: {output_path}{RESET}")
+            print(f"[build] {color_from_hex('ff9bad')}Writing file: {output_path}{RESET}")
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as html_file:
             html_file.write('\n'.join(html))
-        print(f"[build] {GREEN}Finished!{RESET}")
+        print(f"[build] {color_from_hex('FF3CA0', bold=True, italic=True)}Finished!~{RESET} 💖")
 
 
 if __name__ == "__main__":
