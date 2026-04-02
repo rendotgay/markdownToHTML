@@ -39,7 +39,7 @@ def builder(markdown_path, output_path, css=False, verbose=False, gsc=False):
         html += parse(content, css, gsc)
 
         if verbose:
-            print(f"[build] {color_from_hex('5bcefa')}Closing HTML tags~{RESET}")
+            print(f"[build] {color_from_hex('ff9bad')}Closing HTML tags~{RESET}")
         if css:
             css_path = Path(f"{output_path}/style.css")
             if not css_path.exists():
@@ -84,11 +84,11 @@ def builder(markdown_path, output_path, css=False, verbose=False, gsc=False):
 
         output_path = Path(f"{output_path}/{file_name}.html")
         if verbose:
-            print(f"[build] {color_from_hex('ff9bad')}Writing file: {output_path}{RESET}")
+            print(f"[build] {color_from_hex('5bcefa')}Writing file: {output_path}{RESET}")
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as html_file:
             html_file.write('\n'.join(html))
-        print(f"[build] {color_from_hex('FF3CA0', bold=True, italic=True)}Finished!~{RESET} 💖")
+        print(f"[build] {color_from_hex('ff3ca0', bold=True, italic=True)}Finished!~{RESET} 💖")
 
 
 if __name__ == "__main__":
