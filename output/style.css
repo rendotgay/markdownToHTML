@@ -1,0 +1,81 @@
+html {
+	font-family: "Mona Sans VF", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	background: #0d1117;
+	color: #f0f6fc;
+}
+
+body {
+	padding: 40px;
+	line-height: 2;
+}
+
+a {
+	color: #4493f8;
+}
+
+code {
+	background: #151b23 !important;
+	padding: 2px 4px;
+	border-radius: 4px;
+	border: 1px solid #151b23;
+}
+
+code:hover {
+	border: 1px solid #4493f8;
+}
+
+code.block {
+	display: inline-block;
+	width: max-content;
+	padding: 10px;
+	border-radius: 0;
+}
+code.block:hover {
+	border: 1px solid #151b23;
+}
+
+.code-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+ol, ul, pre {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+pre {
+	padding-left: 4px;
+	padding-right: 28px;
+	background: #151b23;
+	border: 1px solid #151b23;
+}
+
+pre:hover {
+	border: 1px solid #4493f8;
+}
+
+.copy-btn {
+	position: absolute;
+	top: 22px;
+	right: 8px;
+	padding: 2px 4px;
+	cursor: pointer;
+	font-size: 12px;
+	background: inherit;
+	color: #f0f6fc;
+	border: 1px solid #151b23;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.copy-btn:hover {
+	border: 1px solid #444c56;
+	background: #444c56;
+}
+
+.copy-btn .material-symbols-outlined {
+	font-size: 14px;
+}
