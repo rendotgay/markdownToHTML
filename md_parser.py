@@ -116,4 +116,10 @@ def parse(content, css:bool, gsc:bool = False):
         # Add to HTML
         html.append(line)
 
+    if ul:
+        html.append('</ul>')
+    if ol:
+        html.append('</ol>')
+    if code_block:
+        html.append('</code></pre>')
     return html
