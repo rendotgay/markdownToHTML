@@ -48,8 +48,10 @@ def builder(markdown_path, output_path, css=False, verbose=False, gsc=False):
                 build_css(css_path, verbose)
             html += [
                 '<script src="gsc.js"></script>',
+                '<script src="zone.js"></script>',
                 '<script>',
                 'hljs.registerLanguage("gsc", gsc);',
+                'hljs.registerLanguage("zone", zone);',
                 "document.querySelectorAll('pre code').forEach(el => {",
                 '    const lang = el.className.match(/language-(\\S+)/)?.[1];',
                 '    if (lang) hljs.highlightElement(el);',
